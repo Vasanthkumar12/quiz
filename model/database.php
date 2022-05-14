@@ -33,8 +33,52 @@ function registerStudent(Student $student){
     }
 }
 
-function registerParticipant($Student){
-    
+function startCompetition($Student){
+    global $conn;
+    $query = "INSERT INTO competition_participants(student_id)
+     VALUES(:id)";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(":id", $student->id);
+    $stmt->execute();
+    if($stmt->rowCount() == 1){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function endCompetition($id, $question_attended, $question_correct){
+    global $conn;
+    $query = "UPDATE competition_participants SET end_date = :end, 
+    questions_attended = :attended, questions_correct = :correct WHERE id = :id";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":attended", $question_attended);
+    $stmt->bindParam(":correct", $question_correct);
+    $stmt->execute();
+    if($stmt->rowCount() == 1){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function checkAnswer($qtn){
+    global $conn;
+    $query = "SELECT 
+        CASE answer = :answer THEN 1
+        ELSE 0 AS isCorrect
+     FROM questions WHERE id = :id";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(":id", $qtn->questionId);
+    $stmt->execute();
+
+}
+
+function calculateEndCompetition($student_answers){
+    foreach($ans as $student_answers){
+
+    }
 }
 
 ?>
