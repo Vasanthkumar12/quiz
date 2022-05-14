@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;800;900&display=swap');
+
+*,
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Courier New', Courier, monospace;
+}
+
+:root{
+    --primary: #363062;
+    --secondary:#4D4C7D;
+    --accent: #827397;
+    --text: #E9D5DA;
+    --light-background: #F5F6F7;
+}

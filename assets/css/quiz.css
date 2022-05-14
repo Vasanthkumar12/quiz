@@ -1,0 +1,139 @@
+
+.submit-btn {
+    background-color: var(--primary);
+    width: max-content;
+    padding: 10px;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.submit-btn:hover{
+    background-color: var(--secondary);
+}
+
+.qus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.qus-no {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--accent);
+}
+
+.question-text {
+    padding: 10px;
+    background-color: var(--primary);
+    border-radius: 10px;
+    color: var(--text);
+    width: 100%;
+    height: max-content;
+}
+
+.option {
+    width: max-content;
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.option:hover input~.check {
+    background-color: var(--primary);
+}
+
+.option input:checked~.check {
+    color: var(--text);
+    background-color: var(--secondary);
+}
+
+.check {
+    background-color: var(--accent);
+    color: var(--text);
+    width: max-content;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    border-radius: 5px;
+    columns: var(--text);
+    border: none;
+    cursor: pointer;
+}
+
+.qus-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 10px;
+    background-color: var(--light-background);
+    align-items: center;
+}
+
+.questions{
+}
+
+.option-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    justify-items: center;
+}
+
+.option1 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--text);
+    padding-left: 10px;
+}
+
+.head-container{
+    width: fit-content;
+    color: var(--accent);
+    padding: 20px 0 20px 0  ;
+} 
+.top-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap:30px;
+}
+.top-head h1{
+    color:var(--primary);
+    margin-bottom: 10px;
+}
+.top-head img{
+    width: auto;
+    height: 140px;
+}
+.container {
+    display: flex;
+    width: 100%;
+    background: var(--text);
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.qus-contain {
+    display: flex;
+    flex-direction: column;
+    background: var(--text);
+    gap: 20px;
+    max-width: 600px;
+    align-content: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.25);
+}
