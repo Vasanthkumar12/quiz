@@ -46,7 +46,7 @@ function renderQuizQuestions(questions){
         no  += 1;
         return (`
             <div class="qus-contain">
-            <input type="hidden" name="qtn[${no}][id]" value="${qtn.id}" />
+            <input type="hidden" name="qtn[${no}][id]" value=${qtn.id} />
             <div class="qus">
                 <div class="qus-no">${no+1}</div>
                 <div class="question-text">${qtn.question}
@@ -54,19 +54,19 @@ function renderQuizQuestions(questions){
             </div>
             <div class="option-container">
                 <label class="option">
-                    <input type="radio" value="${qtn.option_1}" name="qtn[${no}][selected]"></input>
-                    <span class="check">${qtn.option_1}</span>
+                    <input type="radio" value="0" name="qtn[${no}][selected]"></input>
+                    <span class="check">${qtn.option_a}</span>
                 </label>
                 <label class="option">
-                    <input type="radio" value="${qtn.option_2}" name="qtn[${no}][selected]"></input>
-                    <span class="check">${qtn.option_2}</span>
+                    <input type="radio" value="1" name="qtn[${no}][selected]"></input>
+                    <span class="check">${qtn.option_b}</span>
                 </label>
                 <label class="option">
-                    <input type="radio" value="${qtn.option_3}" name="qtn[${no}][selected]"></input>
-                    <span class="check">${qtn.option_3}</span>
+                    <input type="radio" value="2" name="qtn[${no}][selected]"></input>
+                    <span class="check">${qtn.option_c}</span>
                 </label> <label class="option">
-                    <input type="radio" value="${qtn.option_4}"  name="qtn[${no}][selected]"></input>
-                    <span class="check">${qtn.option_4}</span>
+                    <input type="radio" value="3"  name="qtn[${no}][selected]"></input>
+                    <span class="check">${qtn.option_d}</span>
                 </label>
             </div>
         </div>`
@@ -77,7 +77,13 @@ function renderQuizQuestions(questions){
 }
 
 window.onload = ()=>{
-    renderQuizQuestions(questions);
+    let questions = fetch("/quiz/getAllQuestions", { method: 'GET', headers:{   
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    }}).then(res => res.json())
+    .then(questions=>{
+        renderQuizQuestions(questions);
+    }).catch(err=>console.error(err));
 };
 
 function submit(){
