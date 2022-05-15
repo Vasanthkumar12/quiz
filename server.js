@@ -11,6 +11,9 @@ app.use(session({   		//Usuage
 
 const port = 8080;
 
+const register = require("./model/register");
+app.use("/register",register);
+
 app.use("/assets",express.static("assets"));
 // app.use("/",express.static("views"));
 // app.use(express.json());

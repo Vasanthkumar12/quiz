@@ -5,11 +5,17 @@ body {
     background-position: fill;
 }
 
-.heading {
+.top-head {
     text-align: center;
-    background-color: #DCDCDC;
-    color: #3fda20;
-    border-bottom: #FF00FF;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--primary);
+    border-bottom: var(--primary);
+}
+.top-head img{
+    height: 120px;
+}
+.top-head h1{
+    font-size: 30px;
 }
 
 .register-input {
@@ -19,61 +25,63 @@ body {
     width: 250px;
     border-color: rgb(39, 249, 249);
     margin-bottom: 10PX;
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid var(--primary);
 }
 
 .data {
     color: var(--primary);
     font-family: sans-serif;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom:5px;
 }
 
 .btn {
-    color: rgb(255, 0, 0);
+    color: var(--text);
     border: none;
-    background-color: rgb(17, 250, 106);
+    background-color: var(--secondary);
     border-radius: 30px;
     width: 200px;
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
-    margin-left: 30px;
     padding: 5px;
 }
 
-button:hover {
-    font-size: 25px;
+.btn:hover {
     cursor: pointer;
+    background-color: var(--primary);
 }
 
 .sign-up {
-    margin-top: 10px;
-    margin-left: 90px;
     font-size: 30px;
-    padding-left: 2px;
+    color: white;
+    margin-bottom: 10px ;
 }
-
-.bottom-msg a {
+.bottom-msg{
+    width: 100%;
+}
+.bottom-msg {
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
     line-height: 20px;
-    color: green;
-    padding-left: 5px;
-    padding: 10px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin: 10px;
 }
 
 a:hover {
-    color: rgb(0, 51, 255);
+    color: var(--text);
 }
 
 .box {
     margin-top: 50px;
-    background-color: rgb(172, 168, 168);
+    background-color: var(--accent);
     width: 300px;
     border-radius: 20px;
-    padding-left: 25px;
-    padding-bottom: 30px;
+    padding: 30px;
+    margin-bottom: 100px;
 }
 
 .container {
@@ -82,4 +90,18 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sign-up-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.form-input{
+
 }

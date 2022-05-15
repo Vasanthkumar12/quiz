@@ -10,25 +10,33 @@
 </head>
 
 <body>
-    <h1 class="heading">Welcome to our Quiz competition </h1>
+    <div class="top-head">
+        <img src="/assets/images/logo4.png" />
+        <h1>Symposium | Technical QUIZ</h1>
+        <h2>Welcome to our Quiz competition</h2>
+    </div>
     <div class="container">
         <div class="box">
-            <form>
-                <div class="sign-up">
-                    sign up
-                </div>
+            <form class="form-container" method="post" action="/register">
+                <h1 class="sign-up">
+                   Register
+                </h1>
                 <div class="sign-up-contents">
-                    <p class="data">Name :</p>
-                    <input class="register-input" type="text" name="student-name" placeholder="Enter your name"><br>
-                    <p class="data">Email :</p>
-                    <input class="register-input" type="email" name="email" placeholder="Enter your email"> <br>
-                    <p class="data">Password :</p>
-                    <input class="register-input" type="password" name="password" placeholder="Enter your password"><br>
-                    <p class="data">ReType password:</p>
-                    <input class="register-input" type="password" name="password" placeholder="Retype your password"><br>
+                    <label class="form-input">
+                        <p class="data">Name :</p>
+                        <input class="register-input" type="text" name="student-name" placeholder="Enter your name">    
+                    </label>
+                    <label class="form-input">
+                        <p class="data">Email :</p>
+                        <input class="register-input" type="email" name="email" placeholder="Enter your email">
+                    </label>
+                    <label class="form-input">
+                        <p class="data">Phone :</p>
+                        <input class="register-input" type="tel" name="phone" placeholder="Enter your Phone Number">
+                    </label>
                 </div>
-                <button class="btn">Register</button><br><br>
-                <div class="bottom-msg"> <a href="Login.html">Login if you are already registered ? </a></div>
+                <button class="btn" type="submit">Register</button>
+                <a href="#" class="bottom-msg">Login if you are already registered ? </a>
 
             </form>
         </div>
