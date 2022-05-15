@@ -1,57 +1,84 @@
-/* body {
-
-    background: url(back.jpg) no-repeat center;
-    background-size: cover;
-    background-position: fill;
-} */
-
-.heading {
-    text-align: center;
-}
-
-.register-input {
-    border: none;
-    border-bottom: 2px solid blue;
-    padding: 10px;
-    width: 250px;
-    border-color: rgb(39, 249, 249);
-}
-
-.data {
-    color: rgb(248, 36, 36);
-    font-family: sans-serif;
-    font-size: 17px;
-}
-
-.btn {
-    border: none;
-    background-color: rgb(17, 250, 106);
-    border-radius: 30px;
-    width: 150px;
-    margin-top: 20px;
-    margin-left: 40px;
-    padding: 10px;
-}
-
-.sign-up {
-    background-color: rgb(244, 229, 243);
-    width: 150px;
-    padding-left: 2px;
-    border-top-left-radius: 10px;
-    box-shadow: 2px;
-}
-
-.box {
-    background-color: aqua;
-    width: 300px;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    body {
+        background: url(back.jpg) no-repeat center;
+        background-size: cover;
+        background-position: fill;
+    }
+    
+    .heading {
+        text-align: center;
+        background-color: #DCDCDC;
+        color: #3fda20;
+        border-bottom: #FF00FF;
+    }
+    
+    .register-input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        width: 250px;
+        border-color: rgb(39, 249, 249);
+        margin-bottom: 10PX;
+        border-bottom: 2px solid blue;
+    }
+    
+    .data {
+        color: #0000FF;
+        font-family: sans-serif;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    
+    .btn {
+        color: rgb(255, 0, 0);
+        border: none;
+        background-color: rgb(17, 250, 106);
+        border-radius: 30px;
+        width: 200px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 30px;
+        padding: 5px;
+    }
+    
+    button:hover {
+        font-size: 25px;
+        cursor: pointer;
+    }
+    
+    .sign-up {
+        margin-top: 10px;
+        margin-left: 90px;
+        font-size: 30px;
+        padding-left: 2px;
+    }
+    
+    .bottom-msg a {
+        text-decoration: none;
+        font-size: 17px;
+        line-height: 20px;
+        color: green;
+        padding-left: 5px;
+        padding: 10px;
+    }
+    
+    a:hover {
+        color: rgb(0, 51, 255);
+    }
+    
+    .box {
+        margin-top: 50px;
+        background-color: rgb(172, 168, 168);
+        width: 300px;
+        border-radius: 20px;
+        padding-left: 25px;
+        padding-bottom: 30px;
+    }
+    
+    .container {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
