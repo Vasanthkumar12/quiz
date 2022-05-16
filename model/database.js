@@ -27,7 +27,7 @@ function registerStudent(user, callback){
       callback(null);
       return;
     }
-    console.log(result.insertId)
+    // console.log(result.insertId)
     callback(result.insertId);
   });
 }
@@ -36,7 +36,7 @@ async function getUser(userID){
   let query = `SELECT *from students WHERE id = ?`;
   try{
     let res = await executeQuery(query, [userID]);
-    console.log(res[0]);
+    // console.log(res[0]);
     return res[0];
   }catch(e){
     console.log(err.message);
@@ -57,7 +57,7 @@ function addQuestion(question, callback){
       callback(null);
       return;  
     }
-    console.log(result.insertId)
+    // console.log(result.insertId)
     callback(result.insertId);
   });
 }
@@ -70,7 +70,7 @@ function getQuestions(callback){
       callback(null);
       return;
     }
-    console.log(result);
+    // console.log(result);
     callback(result);
   });
 }
@@ -91,7 +91,7 @@ async function checkAnswer(qtnid, answer, callback){
     //   return;
     // }
     // console.log(fields);
-    console.log(res[0].isCorrect);
+    // console.log(res[0].isCorrect);
     // callback(result);
     return res[0].isCorrect;
   // });
@@ -106,21 +106,21 @@ function startCompetition(userID, competitionID, callback){
       callback(null);
       return;
     }
-    console.log(result);
+    // console.log(result);
     callback(result.insertId);
   }); 
 }
 function endCompetition(participantID, score, callback){
-  let query = `UPDATE participants SET end_date = ?, score = ?
+  let query = `UPDATE participants SET end_date = CURRENT_TIMESTAMP, score = ?
                 WHERE id = ?`;
-  con.query(query, [Date().now(), score, participantID], (err, result, fields)=>{
+  con.query(query, [score, participantID], (err, result, fields)=>{
     if(err){
       console.log(err.message);
       callback(null);
       return;
     }
-    console.log(result);
-    callback(result);
+    // console.log(result);
+    callback(result.insertId);
   }); 
 }
 

@@ -18,11 +18,11 @@ body {
     font-size: 30px;
 }
 
-.register-input {
+select, .register-input {
     border: none;
     outline: none;
     padding: 10px;
-    width: 250px;
+    width: 300px;
     border-color: rgb(39, 249, 249);
     margin-bottom: 10PX;
     border-bottom: 2px solid var(--primary);
@@ -78,7 +78,7 @@ a:hover {
 .box {
     margin-top: 50px;
     background-color: var(--accent);
-    width: 300px;
+    width: 400px;
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 100px;

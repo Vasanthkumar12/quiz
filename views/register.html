@@ -39,16 +39,31 @@
                         <input class="register-input" type="text" name="college" placeholder="Enter your College" required>
                     </label>
                     <label class="form-input">
-                        <p class="data">Year :</p>
-                        <input class="register-input" type="number" name="year" placeholder="Enter your Year" required>
+                        <p class="data">Current Studying Year :</p>
+                        <select name="year">
+                            <option disabled selected>Select your year</option>
+                            <option value="1">
+                                1st Year
+                            </option>
+                            <option value="2">
+                                2nd Year
+                            </option>
+                            <option value="3">
+                                3rd Year
+                            </option>
+                            <option value="4">
+                                4th Year
+                            </option>
+                        </select>
+                        <!-- <input class="register-input" type="number" name="year" placeholder="Enter your Year" required> -->
                     </label>
                     <label class="form-input">
                         <p class="data">Department :</p>
                         <input class="register-input" type="text" name="department" placeholder="Enter your Department" required>
                     </label>
                 </div>
-                <button class="btn" type="submit">Register</button>
-                <a href="#" class="bottom-msg">Login if you are already registered ? </a>
+                <button class="btn" type="submit">Start</button>
+                <!-- <a href="#" class="bottom-msg">Login if you are already registered ? </a> -->
 
             </form>
         </div>

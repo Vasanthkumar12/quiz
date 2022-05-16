@@ -8,7 +8,7 @@ router.get("/",(req, res)=>{
     req.session.userID = 4;
     req.session.name = "Nithi GD";
     req.session.email = "g.d.nithi5@gmail.com";
-    console.log(req.session.id)
+    // console.log(req.session.id)
     res.sendFile("/views/register.html", { root: '.'});
 })
 

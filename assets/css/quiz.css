@@ -37,7 +37,8 @@
 }
 
 .option {
-    width: max-content;
+    width: fit-content;
+    text-align: center;
 }
 
 .option input {
@@ -58,12 +59,12 @@
 .check {
     background-color: var(--accent);
     color: var(--text);
-    width: max-content;
     padding: 5px 20px 5px 20px;
     text-align: center;
     border-radius: 5px;
     columns: var(--text);
     border: none;
+    width: 100%;
     cursor: pointer;
 }
 

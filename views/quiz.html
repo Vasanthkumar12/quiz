@@ -10,26 +10,34 @@
     <script src="/assets/javascript/register.js"></script>
 </head>
 <script>
-    let maxAttempt = 3;
+    function millisToMinutesAndSeconds(millis) {
+        var minutes = Math.floor(millis / 60000);
+        var seconds = ((millis % 60000) / 1000).toFixed(0);
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+    let maxAttempt = 0;
     let currentAttempt = 0;
     let timeleft = 30;
     let totalTime = 1000 * timeleft * 60;
-    // setTimeout(function () {
-    // }, 10000);//wait 2 seconds
     var eventTimer = setInterval(function () {
-        if (timeleft <= 0) {
+        if (totalTime < 0) {
             alert("Quiz Event Completed Auto Submitting");
-            // clearInterval(downloadTimer);
+            clearInterval(eventTimer);
+            submit()
         }
-        let clock = document.getElementById("clock");
-        clock.innerHTML = timeleft+ "Minutes";
+        totalTime -= 1000;
         timeleft -= 1;
+        let time = new Date(totalTime);
+        let clock = document.getElementById("clock");
+        // clock.innerHTML = timeleft + " Minutes : " + time.getSeconds() + " Seconds";
+        clock.innerHTML = millisToMinutesAndSeconds(totalTime) + " Minutes";
     }, 1000);
     window.addEventListener("blur", () => {
         currentAttempt += 1;
         if (currentAttempt >= maxAttempt) {
-            alert("Return to page, Auto Submitting");
-            // submit();
+            alert("Page Changed, Auto Submitting");
+            submit();
         }
     })
 </script>
@@ -41,7 +49,8 @@
     </div>
     <form class="container" method="post" action="/quiz">
         <div class="head-container">
-            <h1>Quiz Level 1</h1> <h2>Time Left: </h2>
+            <h1>Quiz Level 1</h1>
+            <h2>Time Left: </h2>
             <span id="clock" style="color: var(--primary); font-size:large; font-weight: 700;"></span>
         </div>
         <div class="qus-container">

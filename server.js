@@ -21,10 +21,13 @@ app.use("/assets",express.static("assets"));
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.get("/", (req, res)=>{
-    console.log(req.session.id)
     res.sendFile(__dirname+"/views/register.html");
 })
 
+app.get("/thank", (req, res)=>{
+    // console.log(req.session.id)
+    res.sendFile(__dirname+"/views/thank.html");
+})
 
 app.listen(port, ()=>{
     console.log(`Listening at port ${port}`);

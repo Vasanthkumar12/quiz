@@ -67,13 +67,19 @@ router.post("/", async (req, res)=>{
     let score = 0;
     for(let i = 0; i<answerSheet.length; i++){
         let qtn = answerSheet[i];
-        let s = await database.checkAnswer(parseInt(qtn.id), parseInt(qtn.selected));
+        if(!qtn.selected){
+            qtn.selected = -1;
+        }
+        let s = await database.checkAnswer(parseInt(qtn.id), parseInt(qtn.selected)+1);
         score += s;
     }
     let participantID = req.session.participantID;
-    database.endCompetition(participantID, score);
+    database.endCompetition(participantID, score, (res)=>{
+        console.log("Student completed "+res)
+    });
     console.log("Score: "+score);
-    res.redirect("/register");
+    res.redirect("/thank");
+    req.session.destroy();
 })
 
 // router.get('/check',async (req, res)=>{
