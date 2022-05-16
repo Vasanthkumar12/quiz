@@ -1,0 +1,101 @@
+[{
+        "question": "1.Which of the following is not an Operating System ?",
+        "options": [
+            "Windows",
+            "Linux",
+            "DOS",
+            "Oracle"
+        ],
+        "answer": 4
+    },
+    {
+        "question": "2.When was the first Operating System is developed ? ",
+        "options": [
+            "1940",
+            "1945",
+            "1950",
+            "1955"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "3.What is the meaning of the Booting in Operating System ?",
+        "options": [
+            "Restart the System",
+            "Install the Program",
+            "Scanning the System",
+            "Turning off the System"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "4.Which of the following is not a part of the Operating System ?",
+        "options": [
+            "Input Output Control Program",
+            "Job control program",
+            "Supervisor",
+            "Performance Monitor"
+        ],
+        "answer": 4
+    },
+    {
+        "question": "5.Which of the following is not an Algorithm of Operating System ?",
+        "options": [
+            "First Come First Serve Algorithm",
+            "Brute Force Algorithm",
+            "Round Robin Algorithm",
+            "Shortest Job First Algorithm"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "6.Which of the following is/are Open Source Operating System",
+        "options": [
+            "Linux",
+            "Windows",
+            "Both A and B",
+            "Android"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "7.Page fault is what ? ",
+        "options": [
+            "an Error in a specific page",
+            "an access to a page not currently in a memory",
+            "a Reference to a page belonging to another program",
+            "occurs when a program accesses a page of memory"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "8.Which one of the following errors will be handle by the operating system?",
+        "options": [
+            "lack of paper in printer",
+            "connection failure in the network",
+            "power failure",
+            "all of the mentioned"
+        ],
+        "answer": 4
+    },
+    {
+        "question": "9.If a process fails, most operating system write the error information to a ______",
+        "options": [
+            "new file",
+            "another running process",
+            "log file",
+            "none of the mentioned"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "10.FIFO scheduling is a type of:",
+        "options": [
+            "pre-emptive scheduling",
+            "non pre-emptive scheduling",
+            "deadline scheduling",
+            "none of the above"
+        ],
+        "answer": 2
+    }
+]

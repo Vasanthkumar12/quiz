@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 const database  = require('./database');
 const authenciate = require('./authenciate');
+const { append } = require('express/lib/response');
+const { route } = require('./register');
 
 router.use('/', authenciate);
 
@@ -11,6 +13,9 @@ router.get("/", (req, res)=>{
     res.sendFile("/views/quiz.html", {root: '.'});
 })
 
+router.get("/instructions", (req, res)=>{
+    res.sendFile("/views/instruction.html", {root: '.'});
+})
 
 router.get("/getAllQuestions", (req, res)=>{
     database.getQuestions((qtns)=>{
@@ -21,10 +26,29 @@ router.get("/getAllQuestions", (req, res)=>{
         }
     });
 })
+router.get("/start",(req,res)=>{
+    let userID = req.session.userID;
+    database.startCompetition(userID, 0, (participantID)=>{
+        if(participantID){
+            req.session.participantID = participantID;
+            res.redirect("/quiz");
+        }else{
+            res.json({"error": "Cannot Start Competition."});
+        }
+    })
+})
+// router.get("/insert",(req,res)=>{
+//     let level1 = require("../data/Level_3.json");
+//     insertAllQuestions(level1, (ids)=>{
+//         console.log(ids);
+//     });
+// })
 
 function insertAllQuestions(questions, callback){
     let ids = []
     questions.forEach(question => {
+        question.level = 'hard';
+        question.category = 'Programming';
         database.addQuestion(question, (res)=>{
             if(res){
                 console.log("Inserted");
@@ -46,8 +70,10 @@ router.post("/", async (req, res)=>{
         let s = await database.checkAnswer(parseInt(qtn.id), parseInt(qtn.selected));
         score += s;
     }
+    let participantID = req.session.participantID;
+    database.endCompetition(participantID, score);
     console.log("Score: "+score);
-    res.redirect("/quiz");
+    res.redirect("/register");
 })
 
 // router.get('/check',async (req, res)=>{

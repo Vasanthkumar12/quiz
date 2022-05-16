@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
@@ -6,7 +7,7 @@ const { sessionConfig } = require('./config/session');
 const userSession = session(sessionConfig);
 app.use(userSession);
 
-const port = 8080;
+const port = 80;
 
 const register = require("./model/register");
 const quiz = require("./model/quiz");

@@ -7,14 +7,14 @@ router.use('/',async (req, res, next) => {
     let session = req.session;
     if(session.userID && session.name && session.email){
         let user = await database.getUser(req.session.userID);
-
+        // console.log(session);
         if(user && user.name == session.name && user.email == session.email){
             console.log(user);
             next();
         }else{
             res.statusCode = 403;
             res.json({"error": "Illegal Access."});
-        }       
+        }   
     }else{
         res.statusCode = 403;
         res.json({"error":"Not Registered"});

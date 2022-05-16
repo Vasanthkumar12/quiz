@@ -45,10 +45,11 @@ async function getUser(userID){
 }
 
 function addQuestion(question, callback){
-  let query = `INSERT INTO questions (question, option_a, option_b, option_c, option_d, answer) 
-    VALUES (?,?,?,?,?)`;
+  let query = `INSERT INTO questions (question, option_a, option_b, option_c, option_d, answer, level, category) 
+    VALUES (?,?,?,?,?,?,?,?)`;
   let values = [question.question, question.options[0], question.options[1],
-               question.options[2], question.options[3], question.answer];
+               question.options[2], question.options[3], 
+               question.answer, question.level, question.category];
 
   con.query(query, values, (err, result, fields)=>{
     if(err){
@@ -106,7 +107,7 @@ function startCompetition(userID, competitionID, callback){
       return;
     }
     console.log(result);
-    callback(result);
+    callback(result.insertId);
   }); 
 }
 function endCompetition(participantID, score, callback){
@@ -124,4 +125,4 @@ function endCompetition(participantID, score, callback){
 }
 
 
-module.exports = { registerStudent, addQuestion, getQuestions, checkAnswer, getUser };
+module.exports = { registerStudent, addQuestion, getQuestions, checkAnswer, getUser, startCompetition, endCompetition };

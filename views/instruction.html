@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruction | Quiz | NSIT</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<script>
+    function start() {
+        let elem = document.getElementsByTagName("body");
+        elem[0].requestFullscreen()
+        window.location = '/quiz/start';
+    }
+</script>
+
+<body>
+    <h1>INSTRUCTIONS</h1>
+    <div class="instruct container">
+        <ul>
+            <h2 style="font-size:30px;">Please Read The Instruction Carefully:</h2>
+            <li>The Duration of Examination is 30 Minutes</li>
+            <li>The Examination Consists Of 25 Questions</li>
+            <li>Don't Open Another Tab</li>
+            <li>Don't Discuss With Others</li>
+            <li>Don't Minimize Browser</li>
+            <li>If you do any of the above the quiz will be automatically submitted.</li>
+        </ul>
+    </div>
+    <button type="button" onclick="start()">start quiz</button>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .instruct {
+            font-size: 25px;
+        }
+
+        button {
+            background-color: var(--primary);
+            position: fixed;
+            right: 500px;
+            border: none;
+            height: 40px;
+            width: 80px;
+            border-radius: 5px;
+            COLOR: WHITE;
+        }
+    </style>
+    </ul>
+</body>
+
+</html>

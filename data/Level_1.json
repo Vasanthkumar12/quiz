@@ -1,0 +1,102 @@
+[{
+        "question": "1.Chief components of First Generation Computer are ?",
+        "options": [
+            "transistors",
+            "vacum tubes and valvs",
+            "integrated circuits",
+            "semiconductors"
+        ],
+        "answers": 2
+    },
+    {
+        "question": "2.Which Unit performs the Mathematical operations in CPU ? ",
+        "options": [
+            "Memory Unit",
+            "Control Unit",
+            "Input Output Unit",
+            "Arithmetic Logical Unit"
+        ],
+        "answer": 4
+    },
+    {
+        "question": "3.What is the Direction of the Address Buss ?",
+        "options": [
+            "Unidirectional",
+            "Bidirectional",
+            "Multidirectional",
+            "None of the above"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "4.Which Computer Architecture is implemented in Cache memory ?",
+        "options": [
+            "Von Neumann's Architecture",
+            "Harvard Architecture",
+            "Instruction Set Architecture",
+            "None of the above"
+
+        ],
+        "answer": 2
+    },
+    {
+        "question": "5.Which Bus is the carried the Address from CPU to Memory ?",
+        "options": [
+            "Data Bus",
+            "Control Bus",
+            "Address Bus",
+            "All of the above"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "6.Which of the following is the Primary or Main Memory of the CPU ?",
+        "options": [
+            "Registers",
+            "Random Access Memory(RAM)",
+            "Read Only Memory(ROM)",
+            "semiconductors"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "7.The CPU has 8-bits instruction,the Opcode of that instruction is 3-bit remaining 5-bit are Information so what is the Maximum Opcode size ?",
+        "options": [
+            "3",
+            "5",
+            "8",
+            "32"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "8.The brain of the Computer System is ?",
+        "options": [
+            "ALU",
+            "CPU",
+            "Memory",
+            "Control Unit"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "9.Which Computer Architecture we are using in now a days computers ?",
+        "options": [
+            "Von Neumann's Architecture",
+            "Harvard Architecture",
+            "Princeton Architecture",
+            "None of the above"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "10.One millisecond is what ?",
+        "options": [
+            "1 second",
+            "10th of a seconds",
+            "100th of a seconds",
+            "1000th of a seconds"
+        ],
+        "answer": 4
+    }
+]

@@ -16,12 +16,12 @@ router.post("/", (req, res)=>{
     console.log(req.body);
     let registerData = req.body;
     registerStudent(registerData, (userID)=>{
-        if(result){
+        if(userID){
             console.log("Registration Successfull");
             req.session.userID = userID;
             req.session.name = registerData['student-name'];
             req.session.email = registerData.email;
-            res.redirect("/quiz");
+            res.redirect("/quiz/instructions");
         }else{
             console.log("Registration Failed");
             res.redirect("/register");

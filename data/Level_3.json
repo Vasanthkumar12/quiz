@@ -1,0 +1,53 @@
+[{
+        "question": "1.What is the output of the following program?\n#include < stdio.h >\nmain() {\nint a[] = { 10, 20, 30 };\nprintf(\" % d \", * a + 1);\n}",
+        "options": [
+            "10",
+            "20",
+            "11",
+            "21"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "2.What is the output of the following program?\n#include <stdio.h>\nint main()\n{\nint x = 10, *y, **z;\ny = &x;\nz = &y;\nprintf(\" % d % d % d \", *y, **z, *(*z));\nreturn 0;\n}",
+
+        "options": [
+            "10 10 10",
+            "100xaa54f10",
+            "Run time error",
+            "No Output"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "3.What is the output of the following program?\n#include<stdio.h>\nint main()\n{ int a = 1, b = 2, c = 3;\nchar d = 0;\nif(a,b,c,d)\n{\nprintf(\"enter in the if\n \");\n}\nelse\n{\nprintf(\"not entered\n \");\n}\nreturn 0;\n\n}",
+        "options": [
+            "enter in the if",
+            "not entered",
+            "run time error",
+            "compilation error"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "4.What is the output of the following program?\nclass DemoProgram{\nstatic float a;\npublic static void main(String[]args)\nint b;\nSystem.out.print(a+b);",
+        "options": [
+            "0",
+            "Variable a might not been initialized",
+            "Variable b might not been initialized",
+            "Non static variable accessed in static area"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "5.What is the range of character data type in java ?",
+        "options": [
+            "0 to 65535",
+            "-32768 to 32767",
+            "-128 to 127",
+            "0 to 255"
+        ],
+        "answer": 1
+    }
+
+]
