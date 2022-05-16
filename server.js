@@ -6,6 +6,7 @@ const session = require('express-session');	//To Acquire it
 const { sessionConfig } = require('./config/session');
 const userSession = session(sessionConfig);
 app.use(userSession);
+const database = require('./model/database');
 
 const port = 80;
 
@@ -27,6 +28,11 @@ app.get("/", (req, res)=>{
 app.get("/thank", (req, res)=>{
     // console.log(req.session.id)
     res.sendFile(__dirname+"/views/thank.html");
+})
+
+app.get("/getAllparticipants",async (req, res)=>{
+    let participants =  await database.getAllParticipants();
+    res.json(participants);
 })
 
 app.listen(port, ()=>{

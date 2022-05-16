@@ -110,10 +110,10 @@ function startCompetition(userID, competitionID, callback){
     callback(result.insertId);
   }); 
 }
-function endCompetition(participantID, score, callback){
-  let query = `UPDATE participants SET end_date = CURRENT_TIMESTAMP, score = ?
+function endCompetition(participantID, score, answers, callback){
+  let query = `UPDATE participants SET end_date = CURRENT_TIMESTAMP, score = ?, answers = ?
                 WHERE id = ?`;
-  con.query(query, [score, participantID], (err, result, fields)=>{
+  con.query(query, [score, JSON.stringify(answers), participantID], (err, result, fields)=>{
     if(err){
       console.log(err.message);
       callback(null);
@@ -124,5 +124,18 @@ function endCompetition(participantID, score, callback){
   }); 
 }
 
+async function getAllParticipants(){
+  let query = "SELECT s.name AS NAME, s.email EMAIL, s.phone PHONE, s.year YEAR, s.department DEPARTMENT, \
+                p.start_date AS START_TIME, p.end_date AS END_TIME, p.score SCORE, \
+                (CASE WHEN p.start_date = p.end_date THEN 'PENDING' ELSE 'COMPLETED' END) AS isCompleted, \
+                TIMESTAMPDIFF(MINUTE, p.start_date, p.end_date) AS TIME_TAKEN\
+                FROM students s \
+                JOIN participants p ON s.id = p.student_id \
+                WHERE p.start_date != p.end_date \
+                ORDER BY score DESC, p.end_date"
+  let res = await executeQuery(query);
+  // console.log(res);
+  return res;
+}
 
-module.exports = { registerStudent, addQuestion, getQuestions, checkAnswer, getUser, startCompetition, endCompetition };
+module.exports = { registerStudent, addQuestion, getQuestions, checkAnswer, getUser, startCompetition, endCompetition, getAllParticipants };

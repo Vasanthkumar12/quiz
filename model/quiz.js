@@ -74,7 +74,7 @@ router.post("/", async (req, res)=>{
         score += s;
     }
     let participantID = req.session.participantID;
-    database.endCompetition(participantID, score, (res)=>{
+    database.endCompetition(participantID, score, answerSheet, (res)=>{
         console.log("Student completed "+res)
     });
     console.log("Score: "+score);
