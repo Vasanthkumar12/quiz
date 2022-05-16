@@ -131,7 +131,6 @@ async function getAllParticipants(){
                 TIMESTAMPDIFF(MINUTE, p.start_date, p.end_date) AS TIME_TAKEN\
                 FROM students s \
                 JOIN participants p ON s.id = p.student_id \
-                WHERE p.start_date != p.end_date \
                 ORDER BY score DESC, p.end_date"
   let res = await executeQuery(query);
   // console.log(res);
